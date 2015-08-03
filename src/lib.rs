@@ -1,5 +1,7 @@
 //! Set breakpoints from within the comfort of your editor.
 //!
+//! [YOU MAY WANT TO USE THIS INSTEAD](http://doc.rust-lang.org/std/intrinsics/fn.breakpoint.html)
+//!
 //! ## Usage
 //!
 //! Import the macros from the `breakpoint` crate. Unfortunately, the
