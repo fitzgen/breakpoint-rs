@@ -95,6 +95,8 @@
 #![deny(missing_docs)]
 #![feature(asm)]
 
+extern crate libc;
+
 #[macro_export]
 
 /// Set a breakpoint.
@@ -120,22 +122,20 @@ macro_rules! breakpoint {
 #[doc(hidden)]
 pub mod tests {
     use std::cell::Cell;
+    use libc::types::os::arch::c95::c_int;
 
     thread_local!(static HIT_BREAKPOINT : Cell<bool> = Cell::new(false));
 
-    // TODO: use `libc` types for better portability. I'm on an airplane with no
-    // internet, so I can't download it from crates.io right now...
-
     #[repr(C)]
-    type sig_t = extern "C" fn(i32);
+    type sig_t = extern "C" fn(c_int);
 
     extern "C" {
-        fn signal(sig: i32, func: sig_t) -> sig_t;
+        fn signal(sig: c_int, func: sig_t) -> sig_t;
     }
 
-    static SIGTRAP : i32 = 5;
+    static SIGTRAP : c_int = 5;
 
-    extern "C" fn sigtrap_handler(sig: i32) {
+    extern "C" fn sigtrap_handler(sig: c_int) {
         assert_eq!(sig, SIGTRAP);
         HIT_BREAKPOINT.with(|v| v.set(true));
     }
