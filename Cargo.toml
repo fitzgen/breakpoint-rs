@@ -1,10 +1,11 @@
 [package]
 name = "breakpoint"
 version = "0.1.0"
-authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
-
 description = "Set breakpoints with the `breakpoint!()` macro."
-
+authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
+homepage = "https://github.com/fitzgen/breakpoint-rs"
+documentation = "https://fitzgen.github.io/breakpoint-rs/breakpoint/index.html"
+repository = "https://github.com/fitzgen/breakpoint-rs.git"
+readme = "README.md"
 license = "BSD-3"
-
 tags = ["breakpoint", "debug", "int3", "debugger"]
