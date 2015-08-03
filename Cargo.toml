@@ -7,5 +7,5 @@ homepage = "https://github.com/fitzgen/breakpoint-rs"
 documentation = "https://fitzgen.github.io/breakpoint-rs/breakpoint/index.html"
 repository = "https://github.com/fitzgen/breakpoint-rs.git"
 readme = "README.md"
-license = "BSD-3"
+license = "BSD-3-Clause"
 tags = ["breakpoint", "debug", "int3", "debugger"]
